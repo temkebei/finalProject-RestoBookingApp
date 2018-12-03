@@ -24,24 +24,10 @@ class Navbar extends Component {
                       <li className="drop">
                         <a href="index.html">Home</a>
                       </li>
-                      <li>
-                        <a href="/">Menu 1</a>
-                      </li>
-                      <li className="drop">
-                        <a href="/">Menu 2</a>
-                      </li>
-                      <li>
-                        <a href="/">Menu 3</a>
-                      </li>
-                      <li className="drop">
-                        <a href="/">Menu 4</a>
-                      </li>
-                      <li className="drop">
-                        <a href="/">Menu 5</a>
-                      </li>
-                      <li>
-                        <a href="/">Menu 6</a>
-                      </li>
+                      <li><a>Reservation</a></li>
+                      <li><a>Contact</a></li>
+                      <li><a>About</a></li>
+                     <li><a>Home</a></li>
                     </ul>
                   </nav>
                 </div>

@@ -6,7 +6,13 @@ const gravatar = require("gravatar");
 const jwt = require("jsonwebtoken");
 
 const Customer = require("../models/customer");
-const keys = require("../config.json");
+const keys = require("../config/config");
+
+Router.get('/', function(req, res){
+  res.send('server works');
+})
+
+
 
 Router.route("/register")
   .get((req, res, next) => {
@@ -46,8 +52,10 @@ Router.route("/login")
     res.sendFile(path.join(__dirname + "/../views/customerlogin.html"));
   })
   .post((req, res, next) => {
-    const Customer_Email = req.body.Customer_Email;
-    const Customer_Password = req.body.Customer_Password;
+    const Customer_Email = req.body.username;
+    const Customer_Password = req.body.password;
+
+    console.log(req.body)
 
     Customer.findOne({ Customer_Email }).then(user => {
       if (!user) {

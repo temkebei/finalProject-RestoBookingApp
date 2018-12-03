@@ -1,0 +1,13 @@
+{
+    "db": "mongodb://localhost/bookingApp",
+    "jwtPrivateKey": "",
+    "mailServer": {
+        "host": "-HOST-",
+        "auth": {
+            "user": "",
+            "pass": ""
+        },
+        "from": "-FROM-EMAIL-",
+        "subject": "Password Reset"
+    }
+}

@@ -11,7 +11,7 @@ class Slider extends Component {
                 <div className="col-lg-12 col-md-12 col-sm-12">
                   <div className="slider__content">
                     <div className="slider__inner">
-                      <h1>“Swaggy”</h1>
+                      <h1>“French Food”</h1>
                       <div className="slider__btn">
                         <a className="food__btn" href="/">
                           Learn More

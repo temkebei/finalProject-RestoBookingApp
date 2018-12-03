@@ -3,16 +3,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 const expressValidator = require("express-validator");
-const config = require("./config.json");
 const passport = require("passport");
 
 mongoose.connect(
-  config.databaseUrl,
-  err => {
-    if (err) {
-      throw err;
-    }
-    console.log("Node Server Connected to Mongo Database.");
+  "mongodb://localhost/restoBookingApp",{
+    useNewUrlParser: true
   }
 );
 
@@ -26,6 +21,7 @@ app.use(passport.initialize());
 require("./routes/passport")(passport);
 
 const customerroutes = require("./routes/customer");
+
 
 app.use("/customer", customerroutes);
 

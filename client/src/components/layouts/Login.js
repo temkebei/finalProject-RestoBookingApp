@@ -1,6 +1,22 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 class Login extends Component {
+  state = {
+
+  }
+  handleInput = (event) =>{
+   
+    this.setState({[event.target.name]: event.target.value})
+  }
+  handleSubmit = (event)=> {
+    event.preventDefault();
+    console.log(this.state);
+    const userInfo = this.state;
+    axios.post('/customer/login', userInfo).then(res => {
+      console.log(res, "this is the result");
+    })
+  }
   render() {
     return (
       <div
@@ -12,6 +28,9 @@ class Login extends Component {
         <form>
           <div className="single-input">
             <input
+              id="username"
+              name="username"
+              onChange={this.handleInput}
               className="cr-round--lg"
               type="text"
               placeholder="User name or email"
@@ -20,12 +39,15 @@ class Login extends Component {
           <div className="single-input">
             <input
               className="cr-round--lg"
+              id="password"
+              name="password"
               type="password"
+              onChange={this.handleInput}
               placeholder="Password"
             />
           </div>
           <div className="single-input">
-            <button type="submit" className="food__btn">
+            <button type="submit" onClick={this.handleSubmit} className="food__btn">
               <span>Go</span>
             </button>
           </div>
